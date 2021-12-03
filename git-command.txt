@@ -1,0 +1,6 @@
+add => menambah file ke dalam staging
+commit => menyimpan staging secara permanen di lokal repo
+push => menyimpan secara remote repo
+
+git remote add origin link-repo
+git push origin

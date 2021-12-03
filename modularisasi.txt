@@ -1,0 +1,20 @@
+Modularisasi
+=> Membuat/Membagi berdasarkan Module
+=> Module berdasarkan Fungsi
+
+Module yang akan dibuat
+1. Main => Module Utama / Entrypoint
+2. Middleware => Custom Middleware
+3. Database => Config DB
+4. Router & SubRouter => Guide API
+5. Handler / Controller => Mengontrol / Menangani Request / Mengirim Response
+6. Models / Repo => Query DB / Hal lain yang berinteraksi dengan DB
+7. Helper => Others, Reusable Function
+
+Dimanakah menempatkan Middleware? router atau subrouter?
+1. Jika semua method di subrouter menggunakan Middleware tsb,
+    maka taruh di router
+2. Jika hanya beberapa method saja, maka taruh di subrouter
+
+Kapan kita membuat models/repo?
+Dibuat ketika kita berinteraksi dengan DB
