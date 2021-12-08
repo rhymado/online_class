@@ -53,7 +53,8 @@ const getClassByNameAndCategory = (req, res) => {
 };
 
 const postNewClass = (req, res) => {
-  const { body } = req;
+  const { body, userInfo } = req;
+  console.log("[DEBUG] userInfo", userInfo);
   //   {
   //       name: "",
   //       category_id: Number

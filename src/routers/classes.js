@@ -1,6 +1,7 @@
 const express = require("express");
 
 const classController = require("../controllers/classes");
+const authorize = require("../middlewares/authorize");
 
 const classRouter = express.Router();
 
@@ -26,6 +27,6 @@ classRouter.get("/:id", classController.getClassById);
 classRouter.get("/", classController.getClassByNameAndCategory);
 
 // /classes/
-classRouter.post("/", classController.postNewClass);
+classRouter.post("/", authorize.checkToken, classController.postNewClass);
 
 module.exports = classRouter;
