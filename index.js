@@ -25,8 +25,8 @@ server.listen(port, () => {
 // middleware global
 const corsOptions = {
   origin: "*",
-  allowedHeaders: "x-access-token",
-  methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["x-access-token", "content-type"],
+  // methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
 };
 server.use(cors(corsOptions));
 server.use(express.urlencoded({ extended: true }));

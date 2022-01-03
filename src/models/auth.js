@@ -7,7 +7,7 @@ const createNewUser = (body) => {
   return new Promise((resolve, reject) => {
     // check apakah email tidak duplikat
     // body
-    const sqlQuery = "INSERT INTO students SET ?";
+    const sqlQuery = "INSERT INTO users SET ?";
     bcrypt
       .hash(body.password, 10)
       .then((hashedPassword) => {
@@ -29,7 +29,7 @@ const createNewUser = (body) => {
 const signIn = (body) => {
   return new Promise((resolve, reject) => {
     const { name, password } = body;
-    const sqlQuery = `SELECT * FROM students WHERE ? AND ?`;
+    const sqlQuery = `SELECT * FROM users WHERE ? AND ?`;
     db.query(sqlQuery, [{ name }, { password }], (err, result) => {
       if (err) return reject({ status: 500, err });
       if (result.length == 0)

@@ -24,7 +24,11 @@ classRouter.get("/:id", classController.getClassById);
 
 // query params
 // /classes/
-classRouter.get("/", classController.getClassByNameAndCategory);
+classRouter.get(
+  "/",
+  authorize.checkToken,
+  classController.getClassByNameAndCategory
+);
 
 // /classes/
 classRouter.post("/", authorize.checkToken, classController.postNewClass);
